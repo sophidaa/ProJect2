@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,9 @@ Route::get('/wrequest',function(){
 Route::get('/update',function(){
     return view('update');
 })->name('update');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::post('/',[RequestController::class,'addRequest']);

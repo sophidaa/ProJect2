@@ -55,110 +55,39 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="/">
             @csrf 
     <div class="form-group"> 
             
 
             <div>
-                <x-label for="email" value="{{ __('ชื่อ') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                <x-label for="dla_fname" value="{{ __('ชื่อ') }}" />
+                <x-input id="dla_fname" class="block mt-1 w-full" type="dla_fname" name="dla_fname"  required autofocus autocomplete="dla_fname" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('สกุล') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-label for="dla_lname" value="{{ __('สกุล') }}" />
+                <x-input id="dla_lname" class="block mt-1 w-full" type="dla_lname" name="dla_lname" required autocomplete="current-dla_lname" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('เบอร์ติดต่อ') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-label for="dla_tel" value="{{ __('เบอร์ติดต่อ') }}" />
+                <x-input id="dla_tel" class="block mt-1 w-full" type="dla_tel" name="dla_tel" required autocomplete="current-dla_tel" />
             </div>
             <div class="mt-4">
-                <x-label for="password" value="{{ __('จังหวัด ') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-label for="dla_prov" value="{{ __('จังหวัด ') }}" />
+                <x-input id="dla_prov" class="block mt-1 w-full" type="dla_prov" name="dla_prov" required autocomplete="current-dla_prov" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('ชื่อ อปท.') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-label for="dla_name" value="{{ __('ชื่อ อปท.') }}" />
+                <x-input id="dla_name" class="block mt-1 w-full" type="dla_name" name="dla_name" required autocomplete="current-dla_name" />
             </div>
             </div>
             <button class="btn btn-warning btn-user btn-block" id="myBtn">ส่งคำขอ</button>
 
     </div>
         </form>
-
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</body>
-    
-    <!-- Modal content -->
-<div id="myModal" class="modal">
- 
- <div class="modal-lg " role="document">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="myModal">แจ้งเตือน</h5>
-                
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        ส่งคำขอสำเร็จ กรุณารอเจ้าหน้าที่ติดต่อกลับไปในภายหลัง
-      </div>
-
-    </div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[1];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-if (event.target == modal) {
-modal.style.display = "none";
-}
-}
-</script>
 
 </x-guest-layout>
     <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet"></link>
