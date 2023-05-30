@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('dla_fname')->nullable();
             $table->string('dla_lname')->nullable();
-            $table->string('dla_tel')->nullable();
+            $table->integer('dla_tel')->nullable();
             $table->string('dla_prov')->nullable();
             $table->string('dla_name')->nullable();
             $table->timestamps();

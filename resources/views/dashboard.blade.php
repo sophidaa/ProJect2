@@ -101,35 +101,19 @@
                                             <th> จัดการ (อนุมัติ/ไม่อนุมัติ)</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        @php($i=1)
+                                        @foreach($req as $row)
                                         <tr>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
+                                            <th>{{$i++}}</th>
+                                            <td>{{$row->dla_fname}}</td>
+                                            <td>{{$row->dla_lname}}</td>
+                                            <td>{{$row->dla_tel}}</td>
+                                            <td>{{$row->dla_prov}}</td>
+                                            <td>{{$row->dla_name}}</td>   
                                         </tr>
-                                        <tr>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                        </tr>
-                                        <tr>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                        </tr>
-                                    <tr>
-
+                                        @endforeach
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

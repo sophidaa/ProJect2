@@ -62,26 +62,26 @@
 
             <div>
                 <x-label for="dla_fname" value="{{ __('ชื่อ') }}" />
-                <x-input id="dla_fname" class="block mt-1 w-full" type="dla_fname" name="dla_fname"  required autofocus autocomplete="dla_fname" />
+                <x-input id="dla_fname" class="form-control" type="dla_fname" name="dla_fname" placeholder="กรุณากรอกชื่อ"  required autofocus autocomplete="dla_fname" />
             </div>
 
             <div class="mt-4">
                 <x-label for="dla_lname" value="{{ __('สกุล') }}" />
-                <x-input id="dla_lname" class="block mt-1 w-full" type="dla_lname" name="dla_lname" required autocomplete="current-dla_lname" />
+                <x-input id="dla_lname" class="form-control" type="dla_lname" name="dla_lname" placeholder="กรุณากรอกนามสกุล" required autocomplete="current-dla_lname" />
             </div>
 
             <div class="mt-4">
                 <x-label for="dla_tel" value="{{ __('เบอร์ติดต่อ') }}" />
-                <x-input id="dla_tel" class="block mt-1 w-full" type="dla_tel" name="dla_tel" required autocomplete="current-dla_tel" />
+                <x-input id="dla_tel" class="form-control" type="dla_tel" name="dla_tel" placeholder="กรุณากรอกเบอร์โทรศัพท์" required autocomplete="current-dla_tel" />
             </div>
             <div class="mt-4">
                 <x-label for="dla_prov" value="{{ __('จังหวัด ') }}" />
-                <x-input id="dla_prov" class="block mt-1 w-full" type="dla_prov" name="dla_prov" required autocomplete="current-dla_prov" />
+                <x-input id="dla_prov" class="form-control" type="dla_prov" name="dla_prov" placeholder="กรุณากรอกชื่อจังหวัด" required autocomplete="current-dla_prov" />
             </div>
 
             <div class="mt-4">
                 <x-label for="dla_name" value="{{ __('ชื่อ อปท.') }}" />
-                <x-input id="dla_name" class="block mt-1 w-full" type="dla_name" name="dla_name" required autocomplete="current-dla_name" />
+                <x-input id="dla_name" class="form-control" type="dla_name" name="dla_name" placeholder="กรุณากรอกชื่ออปท." required autocomplete="current-dla_name" />
             </div>
             </div>
             <button class="btn btn-warning btn-user btn-block" id="myBtn">ส่งคำขอ</button>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Register;
 
 
-    class RequestController extends Controller
+    class WelcomeController extends Controller
         { 
             function addRequest(Request $req){
 
@@ -19,5 +19,6 @@ use App\Models\Register;
                 $request->save();
 
             }
-           
         }
+
+       

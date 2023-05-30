@@ -1,7 +1,5 @@
+use App\Http\Controllers\functionController;
 <x-app-layout>
-
-
-
 <!-- Page Wrapper -->
 <div id="wrapper">
 
@@ -101,26 +99,16 @@
                                             <th>รายละเอียด</th>
                                         </tr>
                                     </thead>
+                                   
                                         <tr>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">รายละเอียด</button></td>   
                                         </tr>
-                                        <tr>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">รายละเอียด</button> </td>
-                                        </tr>
-                                       
-                                    <tr>
 
                                 </table>
                             </div>
