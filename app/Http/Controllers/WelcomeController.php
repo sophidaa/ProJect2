@@ -7,6 +7,7 @@ use App\Models\Register;
 
 
     class WelcomeController extends Controller
+        
         { 
             function addRequest(Request $req){
 
@@ -18,7 +19,7 @@ use App\Models\Register;
                 $request->dla_name=$req->dla_name;
                 $request->save();
 
+                return redirect()->route('update');
+
             }
         }
-
-       

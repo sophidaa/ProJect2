@@ -18,8 +18,10 @@ return new class extends Migration
             $table->integer('dla_tel')->nullable();
             $table->string('dla_prov')->nullable();
             $table->string('dla_name')->nullable();
+            $table->integer('dla_status')->default(0);
             $table->timestamps();
         });
+
     }
 
     /**
@@ -28,5 +30,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('registers');
+
     }
+    
+    
+
 };

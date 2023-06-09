@@ -1,112 +1,60 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Modal Upload File Progress Bar</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <h1>Modal Upload File Progress Bar</h1>
-  <button id="openModalBtn">Open Modal</button>
+<html lang="en">
+    <head>
+        <title>ฟอร์มขอใช้งานระบบ</title>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />   
+    </head>
+      <body class="bg-warning">
+        <div class="relative sm:flex sm:justify-center sm:items-center  ">
+            @if (Route::has('/'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"></div>
+            @endif
+            <x-guest-layout>
+          <form method="GET" action="/">
+              @csrf   
+            <!-- Jumbotron -->
+                  
+                      <div class="jumbotron text-center text-dark bg-warning" >
 
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Upload File Progress</h2>
-      <input type="file" id="fileInput">
-      <button id="uploadBtn">Upload</button>
-      <div id="progressBar">
-        <div id="progress"></div>
-      </div>
-    </div>
-  </div>
+                      <!-- Title -->
+                      <h2 class="card-title h2">สำเร็จ</h2>
+                      <!-- Subtitle -->
+                      <p class="blue-text my-4 font-weight-bold text-dark">คำขอเข้าใช้งานระบบถูกส่งไปสำเร็จ</p>
 
-  <script src="script.js"></script>
-</body>
+                      <!-- Grid row -->
+                      <div class="row d-flex justify-content-center">
+
+                        <!-- Grid column -->
+                        <div class="col-xl-7 pb-2">
+
+                          <p class="card-text">ระบบได้รับคำขอใช้ระบบของท่านแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับไป</p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                      </div>
+                      <!-- Grid row -->
+
+                      <hr class="my-4">
+
+                      <div class="pt-2">
+                        
+                        <button href="welcome" class="btn btn-outline-primary waves-effect">กลับสู่หน้าขอใช้ระบบ<i class="fas fa-download ml-1"></i></button>
+                      </div>
+
+                      </div>
+                  </div> 
+            <!-- Jumbotron -->
+          </from>
+      </body>
+
+    </x-guest-layout>
+    <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet"></link>
+    <link href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet"></link>
+    <link href="{{ asset('admin/css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"></link>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    </body>
 </html>
-
-
-
-<html>
-<head>
-  <title>Upload File Progress Bar</title>
-  <style>
- .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 300px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#progressBar {
-  width: 100%;
-  height: 20px;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-}
-
-#progress {
-  width: 0%;
-  height: 100%;
-  background-color: #4CAF50;
-}
-
-  </style>
-</head>
-
-<script>
-
-var modal = document.getElementById('myModal');
-var closeButton = document.getElementsByClassName('close')[0];
-var uploadButton = document.getElementById('uploadBtn');
-var fileInput = document.getElementById('fileInput');
-var progressBar = document.getElementById('progress');
-
-openModalBtn.addEventListener('click', function() {
-  modal.style.display = 'block';
-});
-
-closeButton.addEventListener('click', function() {
-  modal.style.display = 'none';
-});
-
-window.addEventListener('click', function(event) {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-});
-
-uploadButton.addEventListener('click', function() {
-  // Perform file upload and progress tracking logic here
-  // You can use JavaScript's File API or AJAX requests to handle the file upload and track progress
-});
-
-
-</script>

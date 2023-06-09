@@ -55,7 +55,7 @@ class LoginController extends Controller
                 return redirect()->route('dashboard');
             }
         } else {
-            return redirect()->rout('login')->with('error', 'Email-address and Password are wrong.');
+            return redirect()->route('login')->with('error', 'Email-address and Password are wrong.');
         }
     }
 }

@@ -1,6 +1,5 @@
 <x-app-layout>
     
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -106,11 +105,20 @@
                                         @foreach($req as $row)
                                         <tr>
                                             <th>{{$i++}}</th>
-                                            <td>{{$row->dla_fname}}</td>
-                                            <td>{{$row->dla_lname}}</td>
+                                            <td>{{$row->dla_fname}}   {{$row->dla_lname}}</td>
                                             <td>{{$row->dla_tel}}</td>
                                             <td>{{$row->dla_prov}}</td>
-                                            <td>{{$row->dla_name}}</td>   
+                                            <td>{{$row->dla_name}}</td>
+                                            <td><div class="form-floating">
+                                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                    <button class="btn btn-primary btn-user btn-block" id="accBtn">อนุมัติ</button> 
+                                                    <button class="btn btn-danger btn-user btn-block" id="accBtn">ไม่อนุมัต</button> 
+                                                </from>
+                                            </td>   
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -165,6 +173,5 @@
   <link href="{{ asset('admin/css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"></link>
   <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('js/jquery.min.js') }}"></script>
-  <link rel='stylesheet' href='https://demo.themesberg.com/pixel-pro/css/pixel.css'>
   
 </x-app-layout>

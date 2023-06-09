@@ -1,4 +1,4 @@
-use App\Http\Controllers\functionController;
+
 <x-app-layout>
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -7,7 +7,7 @@ use App\Http\Controllers\functionController;
     <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
@@ -99,15 +99,17 @@ use App\Http\Controllers\functionController;
                                             <th>รายละเอียด</th>
                                         </tr>
                                     </thead>
-                                   
+                                    @php($i=1)
                                         <tr>
+                                            <td>{{$i++}}</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">รายละเอียด</button></td>   
+                                            <td>    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">รายละเอียด</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd2-example-modal-lg">Update</button>
+                                            </td>   
                                         </tr>
 
                                 </table>
@@ -128,8 +130,8 @@ use App\Http\Controllers\functionController;
 
 </div>
 
-<!-- Modal 1 -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<!-- Modal 2 -->
+<div class="modal fade bd2-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -139,66 +141,96 @@ use App\Http\Controllers\functionController;
             </button>
         </div>
         <div class="modal-body">
-        <div class="row mt-4">
-            <div class="col-md-10 mx-auto">
-                <!-- Timeline -->
-                <div class="timeline timeline-one">
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item">
-                    <span class="icon icon-info icon-lg"><i class="bi bi-box-arrow-up"></i></i></span>
-                        <h5 class="my-3">เริ่มขอใช้งาน</h5>
-                        <p>...</p>
+            <form>
+                <div class="form-group">
+                <div class="form-group">
+                        <div class="form-group btn">
+                                <label for="exampleFormControlSelect1">รายการ</label>
+                            <select class="form-control btn-dark" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
                     </div>
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item">
-                        <h5 class="my-3">อัพเดตโฟร์งาน</h5>
-                        <p>Click here <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd2-example-modal-lg">Update</button></p>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">รายละเอียด</label>
+                        <textarea class="form-control" id="message-text"></textarea>
                     </div>
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item">
-                        <h5 class="my-3">เริ่มใช้งานจริง</h5>
-                        <p>...</p>
+                    <div class="form-group">
+                        <p>Upload file PDF </p>
+                        <input type="file" id="fileInput">
                     </div>
+                    <div class="form-group">
+                        <p>Upload file รูปภาพ</p>
+                        <input type="file" id="fileInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Date : </label>
+                        <input type="date" id="date" />
+                    </div>
+            </form>
+        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 1 -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">รายละเอียด</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>การกระทำ</th>
+                                    <th>รายละเอียด</th>
+                                    <th>รูป</th>
+                                    <th>PDF</th>
+                                    <th>วันที่</th>
 
+                                </tr>
+                            </thead>
+                              <tbody>
+                                
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td> 
+                                    </tr>
+                               
+                            </tbody> 
+                        </table> 
+                    </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
         </div>
     </div>
-  </div>
-</div>
-<!-- Modal 2 -->
-<div class="modal fade bd2-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Upload File </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body" >
-            <input type="file" id="fileInput">
-            <button id="uploadBtn" class="btn btn-success" >Upload</button>
-        </div>
-        <div id="progressBar">
-        <div id="progress"></div>
-    </div>
-  </div>
-</div>
-   
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https:cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https:code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https:cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https:cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet"></link>
 <link href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet"></link>
 <link href="{{ asset('admin/css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"></link>
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<link rel='stylesheet' href='https://demo.themesberg.com/pixel-pro/css/pixel.css'></link>
-
 </x-app-layout>
